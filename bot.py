@@ -4,6 +4,7 @@ from keys import keys
 
 import time
 
+SCREEN_NAME = keys['screen_name']
 consumer_key = keys['consumer_key']
 consumer_secret = keys['consumer_secret']
 access_token = keys['access_token']
@@ -15,11 +16,19 @@ api = tweepy.API(auth)
 
 user = api.me()
 print(user.name)
-print(user.screen_name)
-print(user.followers_count)
-for friend in user.friends():
-    print(friend.screen_name)
+print(SCREEN_NAME)
+# print(user.followers_count)
+# for friend in user.friends():
+#     print(friend.screen_name)
 
+### Seguir a quien me sigue
+for follower in tweepy.Cursor(api.followers).items():
+    follower.follow()
+    print ("acabo de seguir a ")
+    print (follower.screen_name)
+    time.sleep(50)
+
+### Retweet the palabras clave
 def main():
     search = ("@cargdev" )
 

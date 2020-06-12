@@ -3,3 +3,5 @@ keys.py
 .vscode/*
 
 __pycache__/*
+
+usuarios.txt
