@@ -40,3 +40,15 @@ If you are new to Tweepy, this is the place to begin. The goal of this tutorial 
 `    print(tweet.text)`
 
 This example will download your home timeline tweets and print each one of their texts to the console. Twitter requires all requests to use OAuth for authentication. The Authentication Tutorial goes into more details about authentication.
+
+## Create Keys
+
+for create the file Key copy the code below and save as **keys.py**
+
+`keys = dict(`
+`    screen_name = 'Your user without @',`
+`    consumer_key =          '',`
+`    consumer_secret =       '',`
+`    access_token =          '',`
+`    access_token_secret =   '',`
+`)`
