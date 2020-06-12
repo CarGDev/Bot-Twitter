@@ -13,7 +13,8 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth,wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
 user =  api.me()
 
-search = 'NuncaParesDeAprender'
+search = input('A que quieres darle like: ')
+# search = 'NuncaParesDeAprender'
 lang = 'es'
 nrTweets = 15
 

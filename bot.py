@@ -27,18 +27,3 @@ for follower in tweepy.Cursor(api.followers).items():
     print ("acabo de seguir a ")
     print (follower.screen_name)
     time.sleep(50)
-
-### Retweet the palabras clave
-def main():
-    search = ("@cargdev" )
-
-    numberofTweets = 1
-    for tweet in tweepy.Cursor(api.search, search).items(numberofTweets):
-        try:
-            tweet.retweet()
-            print("Tweet Retweeted")
-        except tweepy.TweepError as e:
-            print(e.reason)
-        except StopIteration:
-            break
-# main()
