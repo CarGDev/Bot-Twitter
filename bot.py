@@ -23,7 +23,13 @@ print(SCREEN_NAME)
 
 ### Seguir a quien me sigue
 for follower in tweepy.Cursor(api.followers).items():
-    follower.follow()
-    print ("acabo de seguir a ")
-    print (follower.screen_name)
+    try:
+        follower.follow()
+        print ("acabo de seguir a ")
+        print (follower.screen_name)
+    except tweepy.TweepError as e:
+        print(e.reason)
+    except StopIteration:
+        break
+
     time.sleep(50)
